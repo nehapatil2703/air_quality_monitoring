@@ -1,0 +1,9 @@
+
+version: 2
+
+sources:
+  - name: air_quality_monitoring
+    database: AIR_QUALITY_DB  # Replace with actual Snowflake database name
+    schema: AIR_QUALITY_SCHEMA      # Replace with actual Snowflake schema name
+    tables:
+      - name: raw_air_pollution_data
