@@ -39,7 +39,4 @@ models:
   air_quality_monitoring:
     hawa_pani:
       +materialized: table
-      +config:
-        api_key: '9e88de93a5b44724fd8ac883009c81f2'
-        latitude: 34.0549  # Example latitude
-        longitude: -118.2426  # Example longitude
+      
