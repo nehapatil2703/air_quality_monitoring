@@ -37,6 +37,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   air_quality_monitoring:
-    hawa_pani:
-      +materialized: table
+      +materialized: view
       

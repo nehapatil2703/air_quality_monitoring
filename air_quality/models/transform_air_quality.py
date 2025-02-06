@@ -2,13 +2,10 @@ import pandas as pd
 from datetime import datetime
 
 def model(dbt, session):
-    """
-    DBT Python model to transform air pollution data and load it into Snowflake.
-    
-    Transformations:
-    1. Converts Unix timestamp to date and time columns
-    2. Adds AQI category labels based on AQI values
-    """
+# Transformations:
+#     1. Converts Unix timestamp to date and time columns
+#     2. Adds AQI category labels based on AQI values
+
     # Configure as a table materialization
     dbt.config(
         materialized="table",
@@ -18,7 +15,7 @@ def model(dbt, session):
     # Load raw data from Snowflake
     df = session.table("raw_air_pollution_data").to_pandas()
     
-    # Convert Unix timestamp to datetime and split into date and time columns
+    # Split datetime into date and time columns
     df['Datetime'] = pd.to_datetime(df['MEASUREMENT_DATE'], unit='s')
     df['MEASUREMENT_DATE'] = df['Datetime'].dt.date
     df['Time'] = df['Datetime'].dt.time
